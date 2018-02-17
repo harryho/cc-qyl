@@ -1,7 +1,12 @@
 # Quick Start
-## install http-server
-## start http-server
-## test on browser
+
+### clone the repo
+
+### install http-server
+
+### start http-server
+
+### test on browser
 
 ```
 
