@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Blogs</title>
+</head>
+
+<body>
+    <h1 id="message">Message</h1>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+
+    <script type="module">     
+
+        class Blog {
+            constructor(message) {
+                this.message = message;
+            }
+
+            greet() {
+                // console.log($);
+                var element = $('#message');
+                console.log(element.text());
+                element.innerHTML = this.message;
+
+                element.html("<p>All new content. <em>You bet!</em></p>");
+            }
+
+
+
+
+            getBlogs() {
+                const blogs = [
+                { title: " title 1", content: " content 1" },
+                { title: " title 2", content: " content 3" }];
+
+                let content = this.message || '' ;
+                blogs.forEach( (b)=>{
+                    const art= `<h2>${b.title}</h2> <span>${b.content}</span> <br/>`
+                    content +=art;
+                });
+                var element = $('#message');
+                console.log(element.text());
+                element.innerHTML = this.message;
+                element.html(content);
+            }
+        };
+
+        var blog = new Blog('Hello, world!');
+        blog.greet();
+        blog.getBlogs();
+
+    </script> ...
+</body>
+
+</html>
