@@ -8,11 +8,9 @@
 </head>
 
 <body>
-    <h1 id="message">Message</h1>
+    <h1 id="message">Loading ...</h1>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
-    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
-    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
     <script type="module">     
 
         class Blog {
@@ -27,7 +25,7 @@
 
             getBlogs() {
                 const blogs = [
-                    { title: " title 1", content: " content 1" },
+                    { title: " title 1", content: " content 1122" },
                     { title: " title 2", content: " content 3" }];
 
                 let content = this.message || '';
@@ -42,7 +40,7 @@
         blog.greet();
         blog.getBlogs();
 
-    </script> 
-    </body>
+    </script>
+</body>
 
 </html>
