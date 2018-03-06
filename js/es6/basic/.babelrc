@@ -1,0 +1,13 @@
+{
+    "presets": [
+      ["es2015", {
+        "targets": {
+          "node": "current"
+        }
+      }]
+    ],
+    "plugins": [
+        "transform-regenerator",
+        "transform-runtime"
+      ]
+  }

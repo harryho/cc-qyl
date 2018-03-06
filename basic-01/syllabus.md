@@ -132,56 +132,29 @@ folder.bat testFolder testFile
             testFile44.txt
 ```
 
----
+### Task 4:  (Estimation:1 day)
 
-## Following tasks are challenging ones. I don't expect you work on those tasks whole day. 
-## Set a maximum time for the task every day. 
-
-
-### Task 4: (Estimation: 2 day, Optional )
-* create a node app to response the url as below 
-    * /hi?name=Joanna
-
-* Responese as "Welcome Joanna" with blue color
-
-
-### Task 5: (Estimation: 2 day, Optional )
-* create a ES 6 app project (SPA) with babel.
-* The SPA is to display a table of customers on the page with search function
-* Add search function to filter the customer by their first name and last name
-* Add pagination to table
-
-
-
-### Task 6:  (Estimation: 1 day,  Optional)
-
-* Create a batch program `statistic.bat` to search specific file type  and generate statistic result.
-* Create a batch file which can accept two input parameters: folder path, file suffix 
-
-
-### Example: 
-
-* Assume there is a folder `folderA` which contains sub-folders and files the same as task 1.
-* Run the command below
+* Create a batch program to create sub folders and files within the folder `test`similar to previous task
+* The difference is the number of sub-folder is customzied. It is the input parameter as well 
+* Example 
 
 ```
-statistic.bat c:\folderA txt,log
+folder2.bat testFolder testFile 6
+
+REM you will see 6 sub-folders under the folder test and every one contains sub-folders and files as task 3
+
+\---test
+        +---testFolder1
+            +---....
+        +---testFolder2
+            +---....
+        +---testFolder3
+            +---....      
+        +---testFolder4
+            +---.... 
+        +---testFolder5
+            +---....
+        +---testFolder6
+            +---....                        
+
 ```
-
-* Expected result ( Table format )
-
-```
-+----------+-------+
-| file type| count |
-+----------+-------+
-| log      |   5   |
-+----------+-------+
-| txt      |   3   |
-+----------+-------+
-```
-
-
-### Task 7: (optional)
-* create a ES 6 app project with webpack configuration
-* Add Mocha, Chai test framework
-
