@@ -1,7 +1,5 @@
 # Basic 01
 
-## Demo test test git 
-
 ### Overview - 1
 * Chrome bookmark
 * Windows command
@@ -20,16 +18,6 @@
 * bat basic programming
 * sample bat program
 
-### Section 3 - 10
-* Node 
-* npm  
-* Node App -- Hello World
-* yarn
-* ES 6 - Babal
-* ES 6 Environment setup
-
-## Summary -10
-* Webpack (Optional)
 
 ## Assignment
 

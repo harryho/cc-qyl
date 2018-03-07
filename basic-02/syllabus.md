@@ -1,7 +1,5 @@
 # Basic 02
 
-## Demo test test git 
-
 ### Overview - 1
 * node , npm - introduction
 
