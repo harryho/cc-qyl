@@ -1,0 +1,19 @@
+{
+  "name": "napp",
+  "version": "1.0.0",
+  "description": "this is the first node app",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "napp"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "hho",
+  "license": "ISC"
+}
