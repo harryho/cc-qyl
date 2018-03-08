@@ -20,13 +20,19 @@
 
 ## Assignment
 
-### Task 1: (Estimation: 2 day, Optional)
+### Task 1:
 * Create a node app with npm
 * Setup the start, dev, test script
 * The node app needs to response the url as below 
     * /hi?name=Joanna
 
 * Responese as "Welcome Joanna" with blue color
+
+### Task 2:
+* Continue with previous task 
+* The node app needs to response the url as below 
+    * /index.html?name=Joanna
+* Display "Hello Joanna" on the html page
 
 
 
