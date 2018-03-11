@@ -1,0 +1,23 @@
+{
+  "name": "sample_test",
+  "version": "1.0.1",
+  "description": "sample testing",
+  "main": "server.js",
+  "scripts": {
+    "test": "node lib/hello.js",
+    "build": "babel src -d lib",
+    "build:test" : "npm run build && npm run test",
+    "dev": "npm run build && node lib/server.js"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "jjl",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1"
+  }
+}

@@ -19,10 +19,12 @@
 ### Task 1:
 * create a node app from scracth
 * Add babel and other relevant packages 
-* Implement the TODO Task -- Add list header
-* Implement the TODO Task -- Sort the customer list by name, email 
+* Implement the TODO Task -- Add list header with dynamic order of column
+* Implement the TODO Task -- Sort the customer list by name, email, credit
 
 
-### Task 3:
+### Task 2:
 * Implement the TODO Task -- Filter the customer by name, email, mobile
-* Implement the TODO Task -- Sort the customer list by name, email 
+
+### Task 3: 
+* Implement the TODO Task -- highlight matched content of the filtered list
