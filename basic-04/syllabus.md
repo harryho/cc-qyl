@@ -1,12 +1,23 @@
 # Basic 03
 
 ### Section 1 - 20
+* Introduction of Test
 * Javascript test framework
+* Other test tools
 
 
 ### Section 2 - 20
-* Continue to code from basic-03 to render a table of customer on the html
+* Continue to use the code from basic-03 
+* Add mocha and chai to project
+* Create test case for hello.js
+* Add coveralls to the project 
+* Add script to generate the report of code coverage
 
+### Section 3 -- 40 
+* Introduction of web server
+* Show how to use http-server , lite-server
+* Express server
+* Create a customer table on web page
 
 ## Assignment
 
