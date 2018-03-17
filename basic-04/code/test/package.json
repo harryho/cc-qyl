@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "mocha":"mocha src --compilers js:babel-core/register",
     "build": "babel src  -d dist",
-    "build:test": "npm run build && npm run mocha "
+    "build:test": "npm run build && npm run mocha ",
+    "coverage": "babel-istanbul cover  ./node_modules/mocha/bin/_mocha src --watch --compilers js:babel-core/register -- --dir ./src"
   },
   "keywords": [],
   "author": "",
