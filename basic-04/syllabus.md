@@ -26,15 +26,12 @@
 * Add test framework to test the server.js from basic-03
 * The goal of code coverage of will be over 80% (Optional)
 
+
 ### Task 2
-* Continue to the enhance the customer table from the course.
-* Add a search feature on the page
+* follow the instruction to create a express server
+* The server can serve a static website
+https://expressjs.com/en/starter/installing.html
+https://expressjs.com/en/starter/hello-world.html
+https://expressjs.com/en/starter/static-files.html
 
-
-### Task 3
-* Continue to the enhance the customer table
-* Add sorting feature on the table header
-
-### Task 4 (optional)
-* Add pagination to the table
 
