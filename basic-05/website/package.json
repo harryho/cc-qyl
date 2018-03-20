@@ -1,0 +1,43 @@
+{
+  "name": "es6site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src  -d dist ",
+    "build:test": "npm run build && npm run test",
+    "dev": "npm run build && node dist/app.js",
+    "start": "node server",
+    "compile": "babel src  -d dist -w",
+    "watchify": "watchify dist/index.js  -o public/js/bundle.js",
+    "test": "npm run build && mocha spec --compilers js:babel-core/register",
+    "coverage": "babel-istanbul cover  ./node_modules/mocha/bin/_mocha spec --watch --compilers js:babel-core/register -- --dir ./src",
+    "coveralls": "babel-istanbul cover ./node_modules/mocha/bin/_mocha spec --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "jjl",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-istanbul": "^0.12.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "browserify": "^16.1.1",
+    "chai": "^4.1.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "mocha": "^5.0.4",
+    "mocha-lcov-reporter": "^1.3.0",
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "nodemon": "^1.17.2"
+  }
+}
