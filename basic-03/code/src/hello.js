@@ -1,14 +1,21 @@
-console.log("Hello World")
+// export class SuperClass {
 
-class SampleCl {
-    constructor (varName){
-        this.varName = varName;
+//     constructor (name){
+//         this.id = Symbol(name);
+//         this.name =name;
+//     }
+
+//     getName=()=>this.name
+//     sampleMethod =()=> this.type;
+// }
+import {SuperClass} from './SuperClass'
+
+export class SubClass extends SuperClass{
+    constructor (name){
+        super(name)
+       this.id = Symbol(name);
     }
 
-    sampleF=()=>{this.varName}
+    sampleMethod =()=> this.type;
 }
 
-
-const sampleSub = new SampleCl("name")
-
-console.log(sampleSub.sampleF())

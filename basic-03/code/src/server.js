@@ -21,8 +21,8 @@ class CustomerService {
       new Customer("Mr", "Ming", "abc@john.com", "040370102", 436),
       new Customer("Mr", "Jason", "abc@john.com", "041171402", 936),
       new Customer("Ms", "Lyn", "abc@john.com", "04037002", 366),
-      new Customer("Mrs", "Brown", "abc@john.com", "040370402", 236),
-      new Customer("Mrs", "Brown", "abc@john.com", "040370402", 1636)
+      new Customer("Mrs", "Brown", "zabc@john.com", "040370402", 236),
+      new Customer("Mr", "Brown", "abc@john.com", "040370402", 1636)
     ];
   }
 
@@ -36,18 +36,47 @@ class CustomerService {
     else if (!isNaN(a)) return a - b;
   };
 
+  // sortCustomers = (list, sortByFields, isAscending) => {
+  //   if (sortByFields)
+  //     list.sort((a, b) => {
+  //       let idx = 0;
+  //       while (this.compare(a[sortByFields[idx]], b[sortByFields[idx]]) === 0) {
+  //         idx++;
+  //       }
+  //       return isAscending
+  //         ? this.compare(a[sortByFields[idx]], b[sortByFields[idx]])
+  //         : this.compare(b[sortByFields[idx]], a[sortByFields[idx]]);
+  //     });
+  // };
+
   sortCustomers = (list, sortByFields, isAscending) => {
-    if (sortByFields)
+    // console.log(" before sort .. ", list);
+    console.log(sortByFields)
+    if (sortByFields) {
       list.sort((a, b) => {
-        let idx = 0;
-        while (this.compare(a[sortByFields[idx]], b[sortByFields[idx]]) === 0) {
-          idx++;
+        for (var field of sortByFields) {
+          if (field && this.compare(a[field], b[field]) != 0)
+            return isAscending
+              ? this.compare(a[field], b[field])
+              : this.compare(b[field], a[field])
         }
-        return isAscending
-          ? this.compare(a[sortByFields[idx]], b[sortByFields[idx]])
-          : this.compare(b[sortByFields[idx]], a[sortByFields[idx]]);
-      });
-  };
+
+        // let field =
+        //   sortByFields.find(element => this.compare(a[element], b[element]) !== 0);
+
+        // if (field) {
+        //   let result = this.compare(a[field], b[field])
+        //   console.log(" result --- ", result)
+        //   return result;// this.compare(a[element], b[element]);
+        // }
+        // else return 0;
+      })
+    }
+
+    console.log(" after sort .. ", list);
+
+  }
+
   getCustomers = () => this.customers;
 
   // TODO
@@ -65,6 +94,24 @@ class CustomerService {
     return this.customers;
   };
 
+  
+
+  // searchCustomers=(filters)=> {
+  //   if (filters) {
+  //     const customers =[]
+  //     this.customers.map(cust => {
+  //       let filteredOut = false
+  //       for (var f of Object.keys(filters)) {
+  //         if (!cust[f].toLowerCase().includes(filters[f].toLowerCase())){
+  //           filteredOut = true
+  //           break
+  //         }
+  //       }  
+  //       if (!filteredOut) customers.push(cust)
+  //     })
+  //     return customers;
+  //   } else return this.customers
+  // }
   // TODO
   renderCustomers = (headers, customers) => {
     // TODO
@@ -128,6 +175,7 @@ const App = () => {
     search: filters => {
       const csSeverice = new CustomerService();
       const customerList = csSeverice.searchCustomers(filters);
+      console.log(" App loading ... ",customerList);
       const listHeader = ["name", "mobile", "credit", "email", "mobile"];
       csSeverice.renderCustomers(listHeader, customerList);
     },
@@ -169,8 +217,8 @@ const App = () => {
 
   console.log(" Sort by descending... \n");
 
-  sortByFields = ["name", "email", "credit"];
-  isAscending = false;
+const  sortByFields = ["name", "email", "credit"];
+const  isAscending = false;
 
   const customers = app.getAllCustomers();
 
