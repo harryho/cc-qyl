@@ -1,7 +1,7 @@
 
 
 export class Customer {
-    // Includes name, title, email, mobile, credit ( int ) properties
+
     constructor(title, name, email, mobile, credit) {
       this.title = title;
       this.name = name;
@@ -9,6 +9,4 @@ export class Customer {
       this.mobile = mobile;
       this.credit = credit;
     }
-  
-    // get Name= ()=>this.name;
   }
