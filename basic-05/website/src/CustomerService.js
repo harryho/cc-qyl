@@ -1,6 +1,6 @@
 import { Customer } from "./Customer";
 import { DB } from "./DataBase";
-import { CustomerService } from "./CustomerService";
+// import { CustomerService } from "./CustomerService";
 
 export class CustomerService {
   constructor() {
