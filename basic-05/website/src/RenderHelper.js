@@ -31,8 +31,6 @@ const createTableData = () => {
   return td;
 };
 
-const createPageLink = ( pageStepElm )
-
 const createPagination = (
   container,
   data,
@@ -47,7 +45,6 @@ const createPagination = (
   let pageCount = 1;
   while (pageCount <= totalPages) {
     if (pageCount === 1) {
-      // console.log(" pagenum ", pageNum, " page count", pageCount)
       if (1 !== pageNum) {
         const firstLink = document.createElement("a");
         firstLink.innerText = " << ";
@@ -176,13 +173,10 @@ export function renderDataTable(
   // Table body
   if (data && data.length > 0) {
     if (!pagination) {
-      // if (data.length>0 ){
       const pageSize = PAGE_SIZE;
       const totalPages = Math.ceil(data.length / pageSize);
 
       pagination = { pageSize, totalPages, pageNum: 1 };
-      // table.appendChild(pageElm)
-      // }
     }
 
     const tbody = createTableBody();
@@ -191,7 +185,6 @@ export function renderDataTable(
     let contentList = data;
 
     if (pagination) {
-      // const pageNum = pagination.pageNum || 1;
       contentList = data.slice(
         (pagination.pageNum - 1) * pagination.pageSize,
         pagination.pageNum * pagination.pageSize
@@ -211,8 +204,6 @@ export function renderDataTable(
     // Pagination
 
     if (contentList.length > 0) {
-      // pagination.pageSize = pagination.pageSize;// ||PAGE_SIZE;
-      // pagination.totalPages = Math.ceil(data.length/pagination.pageSize)
       const pageElm = createPagination(
         container,
         data,
@@ -225,7 +216,6 @@ export function renderDataTable(
     }
   }
 
-  // return table;
   container.children &&
     container.children.length > 0 &&
     container.removeChild(container.childNodes[0]);
