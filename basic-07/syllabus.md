@@ -1,11 +1,15 @@
 # Basic 07
 
 ### Section 1 - 30
-* Introduce Linux architect
+* Introduce Linux  
+    http://www.dummies.com/computers/operating-systems/linux/linux-file-system-basics/
+    https://www.tldp.org/LDP/intro-linux/html/sect_03_01.html
+    https://www.tutorialspoint.com/operating_system/os_types.htm 
+
 * Introduce user and group
 * Introduce the permission and security
 * Introduce nano and vi 
-* Introduce most useful commands: sudo, su, ls, alias, cp, rm, mkdir, grep, etc.
+* Introduce most useful commands: sudo, su, ls, alias, cp, rm, mkdir, grep, ifconfig, etc.
 
 ### Section 2 - 30
 * Bash script

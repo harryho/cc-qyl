@@ -1,0 +1,21 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "0.8.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.8.1"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "browserify": "browserify dist/app.js -o public/bundle.js",
+    "listen": "http-server -p 8000",
+    "all": "npm run tsc &&  npm run browserify && npm run listen"
+  }
+}

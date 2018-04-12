@@ -15,4 +15,4 @@ function runMultipleCommandWithWait() {
   })();
 }
 
-runMultipleCommandWithWait();
+runMultipleCommandWithWait()
