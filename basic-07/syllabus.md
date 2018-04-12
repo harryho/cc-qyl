@@ -1,28 +1,28 @@
 # Basic 07
 
-### Section 1 - 30
-* Introduce Linux  
-    http://www.dummies.com/computers/operating-systems/linux/linux-file-system-basics/
-    https://www.tldp.org/LDP/intro-linux/html/sect_03_01.html
-    https://www.tutorialspoint.com/operating_system/os_types.htm 
+### Section 1 - 20
+* Introduction of TypeScript
 
-* Introduce user and group
-* Introduce the permission and security
-* Introduce nano and vi 
-* Introduce most useful commands: sudo, su, ls, alias, cp, rm, mkdir, grep, ifconfig, etc.
+### Section 2 - 20
+* 
 
-### Section 2 - 30
-* Bash script
-
-
-### Task 1 
-* Summarize the keynote learned
+### Task 1 (long term)
+* Summarize all technical stacks learned
 
 ### Task 2
-* Create a new user and group named user2
-* Add the user2 to your default group
-* Impersonate user2 to login and change the file created by your default user
+* Create a new commands to run test and coverall
 
 ### Task 3
-* Write a simple hello world with bash script 
+* Add more styles to table via SASS 
+* Beautify the paginator
+
+### Task 4
+* Re-do pagination on your own
+
+### Task 5 (optional)
+* Enhance the pagination to support unlimite pages
+
+### Task 6 (optional)
+* Continue the refactor the rendering process and decouple render helper and actual component
+
 
