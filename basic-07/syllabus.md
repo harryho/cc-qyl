@@ -7,10 +7,12 @@
 * Introduce nano and vi 
 * Introduce most useful commands: sudo, su, ls, alias, cp, rm, mkdir, grep, etc.
 
+### Section 2 - 30
+* Bash script
+
 
 ### Task 1 
 * Summarize the keynote learned
-
 
 ### Task 2
 * Create a new user and group named user2
@@ -19,7 +21,4 @@
 
 ### Task 3
 * Write a simple hello world with bash script 
-
-
-
 
