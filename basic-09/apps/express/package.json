@@ -20,5 +20,8 @@
     "mysql": "^2.15.0",
     "pg-monitor": "~0.8.5",
     "pg-promise": "~7.5.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
   }
 }

@@ -56,17 +56,13 @@ app.use(function(req, res, next) {
       global.dbContext = mysqlContext;
       dbContext.connect();
       break;
-
     case POSTGRESSQL:
       const config = 'postgres://postgres:postgres@localhost:5432/sample';
       var postgresContext = pgp(config);
       global.dbContext = postgresContext;
       break;
     case MONGODB:
-     
-      // var postgresContext =
-      global.dbContext =  mongodb
-      
+      global.dbContext =  mongodb      
       break;
     default:
       throw new Error("Database config is missing!!!");
