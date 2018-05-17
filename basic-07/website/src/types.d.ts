@@ -32,40 +32,57 @@ type PartialDeep<T> = {[P in keyof T]?: PartialDeep<T[P]> };
 
 
 declare const enum Gender {
-  Male="M",
-  Female="F",
+  Male = "M",
+  Female = "F",
   Unknown = "U"
 }
 
 declare const enum Role {
-  User="USER",
-  SuperUser="SUPERUSER",
-  Manager="MANAGER",
-  Member="MEMBER",  
-  Client="CLIENT"
+  User = "USER",
+  SuperUser = "SUPERUSER",
+  Manager = "MANAGER",
+  Member = "MEMBER",
+  Client = "CLIENT",
+}
+
+
+type WithRole<T> = {
+  role: Role
 }
 
 // export 
 declare namespace TsApp {
 
-  interface User {
-    title: string;
-    name: string;
-    email: string;
-    mobile: string;
-    gender: Gender;
-    role?: Role;
-  }
 
-  interface Customer extends User{
-    credit: number;
-    role?: Role.Client | Role.Member
-  }
+  namespace User {
 
-  interface Staff extends User {
-    // position: 
-    role?: Role.Manager | Role.User | Role.SuperUser
+    type UserGroup = "CUSTOMER" | "STAFF"
+    interface Common {
+      title: string;
+      name: string;
+      email: string;
+      mobile: string;
+      gender: Gender;
+      userGroup?: UserGroup
+    }
+
+    interface Customer extends Common {
+      userGroup: "CUSTOMER",
+      credit: number;
+      role?: Role.Client | Role.Member
+    }
+
+    interface Staff extends Common {
+      userGroup: "STAFF",
+      role?: Role.Manager | Role.User | Role.SuperUser
+    }
+
+    type Any = Common | Common & WithRole<Role> | Customer | Staff ;
   }
 
 }
 
+type User = TsApp.User.Any ;
+type Customer = TsApp.User.Customer
+type Staff = TsApp.User.Staff
+type UserGroup = TsApp.User.UserGroup;

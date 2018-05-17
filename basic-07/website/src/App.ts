@@ -1,17 +1,28 @@
-// import { Customer } from "./Customer"
+import  {UserService} from "./services";
 
 (function () {
-  function ShowCustomerList() {
-    const customers: TsApp.Customer[] = [
-      { title: "Mr", name: "John", email: "abc@john.com", mobile: "040370402", credit: 536, gender: Gender.Male },
-      { title: "Mr", name: "Ming", email: "abc@john.com", mobile: "040370102", credit: 436, gender: Gender.Female }
-    ];
+  const userService = new UserService();
 
-    const main = document.getElementById('main')
+  const groupFilter= document.getElementById("groupFilter");
 
-    main && (main.textContent = customers.map(customer => customer.name).join("\n"));
-    console.log(customers)
+  if(groupFilter!==null){
+
+    groupFilter.onchange = (e) =>{
+      console.log(e);
+      console.log(e.currentTarget);
+      if ((e.currentTarget as any ).value !== undefined )
+        userService.renderList((e.currentTarget as any ).value)
+    }
   }
 
-  setTimeout(() => { ShowCustomerList() }, 1000);
+  const roleFilter= document.getElementById("roleFilter");
+
+  if(roleFilter!==null){
+
+    roleFilter.onchange = (e) =>{
+      // TODO
+    }
+  }
+  
+  setTimeout(() => { userService.renderList() }, 200);
 })()

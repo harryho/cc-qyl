@@ -26,3 +26,7 @@
 * Continue the refactor the rendering process and decouple render helper and actual component
 
 
+---
+
+### Task 7 
+* Implement the role filter feature

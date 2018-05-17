@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 
-<html >
+<html>
+
 <head>
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
+    <title>Typescript App Sample</title>
     <!-- <link rel="stylesheet" href="app.css" type="text/css" /> -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.1/require.min.js"></script>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Typescript sample</h1>
-    <div>Name | Email | Mobile </div>
-    <div id="main"></div>
+    <h1>Typescript App Sample</h1>
+    <label for="groupFilter">Filter By User Group: </label>
+    <select id="groupFilter">
+            <option value="">-- All --</option>
+        <option value="CUSTOMER">Customer</option>
+        <option value="STAFF">Staff</option>
+    </select>
+    <label for="roleFiler">Filter By User Role: </label>
+    <select id="roleFilter">
+            <option value="">-- All --</option>
+        <option value="CLIENT">Client</option>
+        <option value="MEMBER">Member</option>
+        <option value="MANAGER">Manager</option>
+        <option value="SUPERUSER">SuperUser</option>
+        <option value="USER">USER</option>
+    </select>
+    <div style="padding-left:50px;padding-top:20px;"> Name | Email | Mobile | User Group | User Role </div>
+    <div id="main">Loading ...</div>
     <script src="bundle.js"></script>
 </body>
+
 </html>

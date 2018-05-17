@@ -1,5 +1,19 @@
-export function isClient(user : TsApp.User ) 
-: user is TsApp.Customer   {
-    return user.role !== undefined  &&
-    ( user.role === Role.Client|| user.role === Role.Member )
+export function isCustomerGroup(group: any)
+    : boolean {
+    return group === "CUSTOMER"
+}
+
+export function isCustomer(user: TsApp.User.Any)
+    : user is Customer {
+    return isCustomerGroup(user.userGroup)
+}
+
+export function isStaffGroup(group: any)
+    : boolean {
+    return group === "STAFF"
+}
+
+export function isStaff(user: TsApp.User.Any)
+    : user is Staff {
+    return isStaffGroup(user.userGroup)
 }
