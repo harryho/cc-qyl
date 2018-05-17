@@ -80,7 +80,7 @@ class UserService {
   }
 
   filterByRole = () => {
-    this.users.filter(user => user.userGroup === this.groupFilter)
+   // TODO
   }
 
   renderList(groupfilter?: UserGroup, roleFilter?: Role) {
