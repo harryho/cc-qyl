@@ -67,7 +67,7 @@ class UserService {
   }
 
   filterByGroup = (user: TsApp.User.Any) => {
-
+  
     if (this.groupFilter !== undefined) {
       if (isCustomerGroup(this.groupFilter)) {
         return isCustomer(user)
@@ -80,16 +80,16 @@ class UserService {
   }
 
   filterByRole = () => {
-    // TODO
+   // TODO
   }
 
   renderList(groupfilter?: UserGroup, roleFilter?: Role) {
 
-    this.groupFilter = groupfilter !== undefined ? groupfilter : this.groupFilter;
-    this.roleFilter = roleFilter !== undefined ? roleFilter : this.roleFilter;
+    this.groupFilter = groupfilter!==undefined ? groupfilter: this.groupFilter;
+    this.roleFilter = roleFilter!==undefined ? roleFilter: this.roleFilter;
 
     const result = this.users.filter(user => {
-      if (this.groupFilter) {
+      if (this.groupFilter ) {
         return this.filterByGroup(user)
       }
       return true;
@@ -100,14 +100,16 @@ class UserService {
 
     if (main !== null) {
 
-      main.innerHTML = "<ul>" + result.map((user: Customer | Staff) =>
+      main.innerHTML = "<ul>" + result.map((user:Customer|Staff) =>
         "<li>"
         + [user.name, user.email, user.mobile, user.userGroup, user.role].join(" | "))
         + "</li>"
         + "</ul>"
     }
-    console.log(" filtered result : ", result)
+    console.log(" filtered result : " , result)
   }
+
+
 }
 
 export { UserService };
