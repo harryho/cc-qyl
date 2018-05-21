@@ -14,12 +14,9 @@ npm i -D webpack  webpack-cli webpack-dev-server  typescript ts-loader webpack-m
 
 ```
 module.exports = {
-  parser: 'sugarss',
-  plugins: {
-    'postcss-import': {},
-    'postcss-cssnext': {},
-    'cssnano': {}
-  }
+    plugins: {
+        "autoprefixer": {},
+    }
 }
 ```
 

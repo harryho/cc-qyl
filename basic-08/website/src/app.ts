@@ -8,10 +8,7 @@ import { UserService } from "./services";
   const groupFilter = document.getElementById("groupFilter");
 
   if (groupFilter !== null) {
-
     groupFilter.onchange = function (e: Event) {
-      console.log(e);
-      console.log(e.currentTarget);
       if (e.currentTarget && (<any>e.currentTarget).value !== undefined)
         userService.renderList((<any>e.currentTarget).value)
     }
