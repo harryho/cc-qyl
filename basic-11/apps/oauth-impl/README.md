@@ -2,10 +2,20 @@
 
 Supports `    "oauth2-server": "^3.0.0-b2",`
 
+
+
+## Prerequisite
+
+See SQL file in `/sql` folder
+
+Create a databaes `oauth_demo` in your mysql or postgres server. Restore the database by running the relevant sql script.
+
+References:
+https://github.com/dsquier/oauth2-server-php-mysql
+
 ## Installation
 
 ```
-git clone https://github.com/manjeshpv/node-oauth2-server-implementation
 npm install
 npm start or node ./bin/www
 ```
@@ -27,7 +37,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-// https://github.com/manjeshpv/node-oauth2-server-implementation/blob/master/components/oauth/models.js
 var oauth = new oauthServer({
   model: require('./models.js')
 });
@@ -89,14 +98,3 @@ To simulate, Use Postman: https://www.getpostman.com/collections/37afd82600127fb
 - Implicitly supports any form of storage e.g. PostgreSQL, MySQL, Mongo, Redis...
 - Full test suite
 
-## Model Specification
-
-See SQL file in `/sql` folder
-
-The module requires a model object through which some aspects or storage, retrieval and custom validation are abstracted.
-The last parameter of all methods is a callback of which the first parameter is always used to indicate an error.
-
-Note: see https://github.com/manjeshpv/node-oauth2-server-implementation/blob/master/components/oauth/models.js for a full model example using MySQL.
-
-References:
-https://github.com/dsquier/oauth2-server-php-mysql

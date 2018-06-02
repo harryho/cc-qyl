@@ -136,7 +136,7 @@ CREATE TABLE `oauth_clients` (
 --
 
 INSERT INTO `oauth_clients` (`id`, `name`, `client_id`, `client_secret`, `redirect_uri`, `grant_types`, `scope`, `user_id`) VALUES
-(1, NULL, 'democlient', 'democlientsecret', 'http://localhost/cb', NULL, NULL, 1);
+(1, NULL, 'democlient', 'democlientsecret', 'http://localhost/cb', NULL, 'profile', 1);
 
 -- --------------------------------------------------------
 
