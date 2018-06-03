@@ -5,7 +5,7 @@ export class Routes {
     
     public userController: UserController = new UserController() 
     
-    public routes(app): void {   
+    public routes(app): void {
         
         app.route('/')
         .get((req: Request, res: Response) => {            
@@ -13,7 +13,7 @@ export class Routes {
                 message: 'Welcome, this is TS Express API !!!!'
             })
         })
-        
+
         // User 
         app.route('/user')
         .get((req: Request, res: Response, next: NextFunction) => {
@@ -21,17 +21,15 @@ export class Routes {
             console.log(`Request from: ${req.originalUrl}`);
             console.log(`Request type: ${req.method}`);
             next();
-        }, this.userController.getUsers)        
-
+        }, this.userController.getUsers)
         // POST endpoint
-        .post(this.userController.addNewUser);
-
+        .post(this.userController.addNewUser)
+        
         // User detail
         app.route('/user/:userId')
         // get specific user
         .get(this.userController.getUserWithID)
         .put(this.userController.updateUser)
         .delete(this.userController.deleteUser)
-
     }
 }

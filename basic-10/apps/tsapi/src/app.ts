@@ -24,12 +24,11 @@ class App {
         // serving static files 
         this.app.use(express.static('public'));
     }
-
+    
     private mongoSetup(): void{
         mongoose.Promise = global.Promise;
-        mongoose.connect(this.mongoUrl);    
+        mongoose.connect(this.mongoUrl);
     }
-
 }
 
 export default new App().app;
