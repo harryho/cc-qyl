@@ -16,37 +16,39 @@ var OAuthClient = sqldb.OAuthClient
 var OAuthRefreshToken = sqldb.OAuthRefreshToken
 var OAuthScope = sqldb.OAuthScope
 var User = sqldb.User
-//
-//User.sync({force:config.seedDBForce}).then(function() {
-//    return User.destroy({ where: {} });
-//  })
-//  .then(function() {
-//    User.bulkCreate([{username:'admin',password:'admin'}])
-//  })
-//
 
-OAuthClient.sync({force:config.seedDBForce}).then(function() {
-    return OAuthClient.destroy({ where: {} });
+User.sync({ force: config.seedDBForce }).then(function () {
+  return User.destroy({ where: {} });
+})
+  .then(function () {
+    User.bulkCreate([{ username: 'admin', password: 'admin', scope: 'profile' }], )
+  }).then(function () {
+    OAuthClient.sync({ force: config.seedDBForce })
+      .then(function () {
+        return OAuthClient.destroy({ where: {} });
+      })
+      .then(function () {
+        OAuthClient.bulkCreate([{
+          client_id: 'democlient',
+          client_secret: 'democlientsecret',
+          redirect_uri: 'http://localhost/cb',
+          scope: 'profile',
+          user_id: 1
+        }], )
+      })
+      .then(function () {
+        OAuthAccessToken.sync({ force: config.seedDBForce})
+        OAuthRefreshToken.sync({ force: config.seedDBForce})
+        OAuthAuthorizationCode.sync({ force: config.seedDBForce})
+        OAuthScope.sync({ force: config.seedDBForce }).then(function () {
+          return OAuthScope.destroy({ where: {} });
+        })
+          .then(function () {
+            OAuthScope.bulkCreate([{ scope: 'profile', is_default: true }],
+             )
+          })
+      })
   })
-  .then(function() {
-    OAuthClient.bulkCreate([{
-      client_id:'democlient',
-      client_secret:'democlientsecret',
-      redirect_uri:'http://localhost/cb'
-    }])
-  })
-OAuthAccessToken.sync({force:config.seedDBForce})
-OAuthRefreshToken.sync({force:config.seedDBForce})
-OAuthAuthorizationCode.sync({force:config.seedDBForce})
-
-
-OAuthScope.sync({force:config.seedDBForce}).then(function() {
-    return OAuthScope.destroy({ where: {} });
-  })
-  .then(function() {
-    OAuthScope.bulkCreate([{scope:'profile'}])
-  })
-
 //Thing.sync({force:config.seedDBForce})
 //  .then(function() {
 //    return Thing.destroy({ where: {} });

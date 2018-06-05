@@ -15,18 +15,15 @@ var db = {
   )
 };
 
+db.User = db.sequelize.import('./User');
+db.OAuthClient = db.sequelize.import('./OAuthClient');
 db.OAuthAccessToken = db.sequelize.import('./OAuthAccessToken');
 db.OAuthAuthorizationCode = db.sequelize.import('./OAuthAuthorizationCode');
-db.OAuthClient = db.sequelize.import('./OAuthClient');
 db.OAuthRefreshToken = db.sequelize.import('./OAuthRefreshToken');
 db.OAuthScope = db.sequelize.import('./OAuthScope');
-db.User = db.sequelize.import('./User');
 db.Thing = db.sequelize.import('./Thing');
 
 Object.keys(db).forEach(function(modelName) {
-  if (db[modelName].classMethods && 'associate' in db[modelName].classMethods) {
-    db[modelName].associate(db);
-  }
   if (  'associate' in db[modelName]) {
     db[modelName].associate(db);
   }
