@@ -1,9 +1,6 @@
-require("babel-polyfill");
 
 console.log("\n Server launching .....");
-// import {TableHelper} from "./RenderHelper"
 import {App} from "./App"
-// import {RenderHelper} from "./RenderHelper"
 import { listeners } from "process/browser";
 import {debounce} from "lodash"
 

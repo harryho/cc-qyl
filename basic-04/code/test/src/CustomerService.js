@@ -1,7 +1,7 @@
-import {Customer} from './Customer'
+import { Customer } from './Customer'
 
 export
-class CustomerService {
+  class CustomerService {
   constructor() {
     // Initialize a list of customer
     this.customers = [
@@ -14,8 +14,8 @@ class CustomerService {
     ];
   }
 
-  isNullOrEmpty = test =>
-    test === undefined || test === null || test.trim().length === 0;
+  isNullOrEmpty = test => test === undefined || test === null || test.trim().length === 0;
+
 
   capitalize = s => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -82,7 +82,7 @@ class CustomerService {
     return this.customers;
   };
 
-  
+
 
   // searchCustomers=(filters)=> {
   //   if (filters) {
