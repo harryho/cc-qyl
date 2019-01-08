@@ -50,10 +50,13 @@ const createPagination = (
         firstLink.innerText = " << ";
           firstLink.setAttribute("style", "color:red; font-weight:bold;");
         firstLink.onclick = function() {
-          sortTable(container, data, headers, sortingHeader, {
-            ...pagination,
-            pageNum: 1
-          });
+          pagination.pageNum = 1;
+          sortTable(container, data, headers, sortingHeader, pagination);
+          //   {
+          //   // ...pagination,
+          //   totalPages,
+          //   pageNum: 1
+          // });
         };
         pages.appendChild(firstLink);
       } else {
@@ -69,10 +72,13 @@ const createPagination = (
       pageLink.innerText = " " + pageCount + " ";
       pageLink.setAttribute("style", "color:red; font-weight:bold;");
       pageLink.onclick = function() {
-        sortTable(container, data, headers, sortingHeader, {
-          ...pagination,
-          pageNum: pNum
-        });
+        pagination.pageNum = pNum;
+        sortTable(container, data, headers, sortingHeader, pagination);
+        //  {
+        //   // ...pagination,
+        //   totalPages,
+        //   pageNum: pNum
+        // });
       };
       pages.appendChild(pageLink);
     } else {
@@ -85,12 +91,16 @@ const createPagination = (
       if (totalPages !== pageNum) {
         const endLink = document.createElement("a");
         endLink.innerText = " >> ";
-        endLink.setAttribute("style", "color:red; font-weight:bold;");
+        endLink.setAttribute("style", "color:red; font-weight:bold;");        
         endLink.onclick = function() {
-          sortTable(container, data, headers, sortingHeader, {
-            ...pagination,
-            pageNum: totalPages
-          });
+          pagination.pageNum = totalPages;
+          sortTable(container, data, headers, sortingHeader, pagination);
+          //   {
+          //   // ...pagination,
+          //   totalPages,
+          //   pageNum: totalPages
+          // }
+          // ;
         };
         pages.appendChild(endLink);
       } else {

@@ -105,7 +105,7 @@ makes it harder for us to review your submission anonymously.
 
 ##  Assessment
 
-* Knowledge of chosen development language – TypeScript / JavaScript
+* Knowledge of chosen development language – JavaScript
 
 * Design and Architecture – OOP, Functional Programming or other
 
